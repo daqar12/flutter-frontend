@@ -1,0 +1,36 @@
+CREATE DATABASE LoginDB;
+GO
+
+USE LoginDB;
+GO
+
+CREATE TABLE Users (
+    id INT PRIMARY KEY IDENTITY,
+    username NVARCHAR(50),
+    password NVARCHAR(50)
+);
+
+-- Insert sample user
+INSERT INTO Users (username, password) VALUES ('testuser', '1234');
+
+select * from  register
+
+CREATE TABLE register (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    FullName NVARCHAR(100),
+    Phone NVARCHAR(15),
+    Email NVARCHAR(100),
+    Address NVARCHAR(255),
+    Age INT
+);
+
+
+CREATE TABLE Transfers (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    from_service VARCHAR(50),
+    to_service VARCHAR(50),
+    amount DECIMAL(10, 2),
+    service_charge DECIMAL(10, 2),
+    net_amount DECIMAL(10, 2),
+    created_at DATETIME DEFAULT GETDATE()
+);
